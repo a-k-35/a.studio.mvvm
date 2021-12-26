@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="mainActivitynesnesi"
+            type="com.example.akacalculatordesk.MainActivity" />
+        <variable
+            name="hesaplamaSonucu"
+            type="String" />
+        <import type="android.view.View"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/calculator_background_main"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/buttonYuzeBol"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="7dp"
+            android:backgroundTint="@color/softgray"
+            android:onClick="@{()-> mainActivitynesnesi.buttonYuzeBol()}"
+            android:text="%"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonC"
+            app:layout_constraintTop_toBottomOf="@+id/editTextResult" />
+
+        <Button
+            android:id="@+id/buttonNokta"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:backgroundTint="@color/gray"
+            android:textSize="24sp"
+            android:layout_marginEnd="7dp"
+            android:onClick="@{()-> mainActivitynesnesi.buttonNokta()}"
+            android:text="."
+            app:layout_constraintEnd_toStartOf="@+id/buttonEsittir"
+            app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+        <Button
+            android:id="@+id/buttonEsittir"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="@color/orange"
+            android:onClick="@{()-> mainActivitynesnesi.buttonEsittir()}"
+            android:text="="
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonCikarma" />
+
+        <Button
+            android:id="@+id/buttonC"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="7dp"
+            android:backgroundTint="@color/softgray"
+            android:onClick="@{()-> mainActivitynesnesi.buttonC()}"
+            android:text="c"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonTopla"
+            app:layout_constraintTop_toBottomOf="@+id/editTextResult" />
+
+        <Button
+            android:id="@+id/button0"
+            android:layout_width="187dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="7dp"
+            android:onClick="@{()-> mainActivitynesnesi.button0Tikla()}"
+            android:text="0"
+            android:backgroundTint="@color/gray"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonNokta"
+            app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:backgroundTint="@color/gray"
+            android:textSize="24sp"
+            android:layout_marginEnd="7dp"
+            android:onClick="@{()-> mainActivitynesnesi.button9Tikla()}"
+            android:text="9"
+            app:layout_constraintEnd_toStartOf="@+id/buttonCarpma"
+            app:layout_constraintTop_toBottomOf="@+id/buttonC" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:backgroundTint="@color/gray"
+            android:textSize="24sp"
+            android:layout_marginEnd="7dp"
+            android:onClick="@{()-> mainActivitynesnesi.button8Tikla()}"
+            android:text="8"
+            app:layout_constraintEnd_toStartOf="@+id/button9"
+            app:layout_constraintTop_toBottomOf="@+id/buttonYuzeBol" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="7dp"
+            android:backgroundTint="@color/gray"
+            android:onClick="@{()-> mainActivitynesnesi.button7Tikla()}"
+            android:text="7"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/button8"
+            app:layout_constraintTop_toBottomOf="@+id/buttonReverse" />
+
+        <Button
+            android:id="@+id/buttonReverse"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="7dp"
+            android:backgroundTint="@color/softgray"
+            android:onClick="@{()-> mainActivitynesnesi.buttonReverse()}"
+            android:text="+/-"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonYuzeBol"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextResult" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:backgroundTint="@color/gray"
+            android:textSize="24sp"
+            android:layout_marginEnd="7dp"
+            android:onClick="@{()-> mainActivitynesnesi.button6Tikla()}"
+            android:text="6"
+            app:layout_constraintEnd_toStartOf="@+id/buttonBolme"
+            app:layout_constraintTop_toBottomOf="@+id/button9" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:backgroundTint="@color/gray"
+            android:textSize="24sp"
+            android:layout_marginEnd="7dp"
+            android:onClick="@{()-> mainActivitynesnesi.button5Tikla()}"
+            android:text="5"
+            app:layout_constraintEnd_toStartOf="@+id/button6"
+            app:layout_constraintTop_toBottomOf="@+id/button8" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:backgroundTint="@color/gray"
+            android:textSize="24sp"
+            android:layout_marginEnd="7dp"
+            android:onClick="@{()-> mainActivitynesnesi.button4Tikla()}"
+            android:text="4"
+            app:layout_constraintEnd_toStartOf="@+id/button5"
+            app:layout_constraintTop_toBottomOf="@+id/button7" />
+
+        <Button
+            android:id="@+id/buttonTopla"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="@color/orange"
+            android:onClick="@{()-> mainActivitynesnesi.buttonToplamaTikla()}"
+            android:text="+"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextResult" />
+
+        <Button
+            android:id="@+id/buttonBolme"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="@color/orange"
+            android:onClick="@{()-> mainActivitynesnesi.buttonBolmeTikla()}"
+            android:text="/"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonCarpma" />
+
+        <Button
+            android:id="@+id/buttonCikarma"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="@color/orange"
+            android:onClick="@{()-> mainActivitynesnesi.buttonCikarmaTikla()}"
+            android:text="-"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonBolme" />
+
+        <Button
+            android:id="@+id/buttonCarpma"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="@color/orange"
+            android:onClick="@{()-> mainActivitynesnesi.buttonCarpmaTikla()}"
+            android:text="x"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonTopla" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:backgroundTint="@color/gray"
+            android:textSize="24sp"
+            android:layout_marginEnd="7dp"
+            android:onClick="@{()-> mainActivitynesnesi.button2Tikla()}"
+            android:text="2"
+            app:layout_constraintEnd_toStartOf="@+id/button3"
+            app:layout_constraintTop_toBottomOf="@+id/button5" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:backgroundTint="@color/gray"
+            android:textSize="24sp"
+            android:layout_marginEnd="7dp"
+            android:onClick="@{()-> mainActivitynesnesi.button3Tikla()}"
+            android:text="3"
+            app:layout_constraintEnd_toStartOf="@+id/buttonEsittir"
+            app:layout_constraintTop_toBottomOf="@+id/button6" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="7dp"
+            android:backgroundTint="@color/gray"
+            android:onClick="@{()-> mainActivitynesnesi.button1Tikla()}"
+            android:text="1"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/button2"
+            app:layout_constraintTop_toBottomOf="@+id/button4" />
+
+        <EditText
+            android:id="@+id/editTextResult"
+            android:lines="1"
+            android:maxLength="13"
+            android:layout_width="0dp"
+            android:focusable="false"
+            android:cursorVisible="false"
+            android:layout_height="213dp"
+            android:ems="10"
+            android:inputType="number"
+            android:text="@{hesaplamaSonucu}"
+            android:textColor="@color/black"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
